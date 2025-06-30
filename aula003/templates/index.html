@@ -1,15 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>Teste com Flask</h1>
-    {% for jogo in jogos %}
-    <tr>
-        <td>{{jogo}}</td>
-    </tr>
-    {%endfor%}
-</body>
-</html>
+{%extends "template.html" %}
+{% block conteudo %}
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Console</th>
+            </tr>
+        </thead>
+
+
+        {% for jogo in jogos %}
+            <tr>
+                <td>{{jogo.nome}}</td>
+                <td>{{jogo.categoria}}</td>
+                <td>{{jogo.console}}</td>
+            </tr>
+        {%endfor%}
+    </table>
+{% endblock conteudo %}
